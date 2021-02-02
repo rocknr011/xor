@@ -4,17 +4,17 @@
 #include <errno.h>
 
 
-const char *KEY_ENVIRONMENT = "XOR64_KEY";
+const char *ENVIRONMENT_KEY_VAR = "XOR64_KEY";
 
 int main(void) {
     unsigned char * key; // = "5N6,?-pqmot\\=K/vksrMQO%47n*u|:l.";
     int ch, count=0;
     FILE *fc, *fx;
 
-    key = getenv(KEY_ENVIRONMENT);
+    key = getenv(ENVIRONMENT_KEY_VAR);
 
     if (key == NULL) {
-        printf("Evironment variable %s not found!\n", KEY_ENVIRONMENT);
+        printf("Evironment variable %s not found!\n", ENVIRONMENT_KEY_VAR);
         exit(1);
     }
 
@@ -27,14 +27,10 @@ int main(void) {
                 fputc(ch ^ key[count % strlen(key)], fx);
                 count++;
             } 
-
-            // fclose(fx);
         } 
         else {
             printf("Error: %d\n", errno);
         } 
-
-        // fclose(fc);
     }
     else {
         printf("Error: %d\n", errno);
