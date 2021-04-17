@@ -5,3 +5,5 @@ config*
 
 xor64
 xor64s
+xor
+xors

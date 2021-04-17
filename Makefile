@@ -2,16 +2,16 @@ ODIR=obj
 SDIR=src
 
 CC=gcc
-CFLAGS=-I$(SDIR)
+CFLAGS=-I$(SDIR) -g
 DEPS=
 
 $(ODIR)/%.o: $(SDIR)/%.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
-xor64: $(ODIR)/xor64.o
+xor: $(ODIR)/xor.o
 	$(CC) -o $@ $^ $(CFLAGS)
 
-xor64s: $(ODIR)/xor64.o
+xors: $(ODIR)/xor.o
 	$(CC) -o $@ $^ $(CFLAGS) -static
 
 clean:
