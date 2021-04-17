@@ -52,8 +52,8 @@ int main(int argc, char **argv) {
         "\n"
         "  -h, --help       Show help message and quit.\n"
         "  -i, --in-file    Specify source file.\n"
-        "  -o, --out-file   Specify out xor-file.\n"
-        "  -k, --key-file   Specify file contained xor-key.\n"
+        "  -o, --out-file   Specify out file.\n"
+        "  -k, --key-file   Specify file contained xor key.\n"
         "\n";
     
     int c;
